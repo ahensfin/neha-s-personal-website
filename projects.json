@@ -1,0 +1,124 @@
+{
+  "name": "Neha",
+  "about": "I’m a Finance and Economics student with a CS minor at Case Western Reserve’s Weatherhead School of Management. I do applied econometrics research as a PREDOC fellow and have presented work at Federal Reserve branches. Click a branch or a project to explore.",
+  "branches": {
+    "econ": {
+      "t": "Econ",
+      "c": "#8f2d3a"
+    },
+    "finance": {
+      "t": "Finance",
+      "c": "#c0728a"
+    },
+    "cs": {
+      "t": "CS",
+      "c": "#6f7076"
+    },
+    "personal": {
+      "t": "Personal",
+      "c": "#a98a6a"
+    }
+  },
+  "projects": [
+    {
+      "id": "spark-psm",
+      "title": "SPARK early childhood program evaluation",
+      "tags": [
+        "econ"
+      ],
+      "pdf": "pdf/spark-psm.pdf",
+      "text": "A propensity score matching pipeline in R that estimates the effect of an early childhood program by comparing participants with similar non-participants."
+    },
+    {
+      "id": "predoc",
+      "title": "PREDOC applied econometrics project",
+      "tags": [
+        "econ"
+      ],
+      "pdf": "pdf/predoc.pdf",
+      "draft": 1,
+      "text": "Replace this with the question, the data, your method and the main finding."
+    },
+    {
+      "id": "valuation",
+      "title": "Equity valuation case study",
+      "tags": [
+        "finance"
+      ],
+      "pdf": "pdf/valuation.pdf",
+      "draft": 1,
+      "text": "Replace this with the company, your valuation approach and your thesis."
+    },
+    {
+      "id": "algo-trading",
+      "title": "Algo trading project",
+      "tags": [
+        "finance",
+        "cs"
+      ],
+      "pdf": "pdf/algo.pdf",
+      "draft": 1,
+      "text": "Replace this with the strategy, the data, the results and the repo link."
+    },
+    {
+      "id": "trocr",
+      "title": "TrOCR for historical Spanish court documents",
+      "tags": [
+        "cs",
+        "personal"
+      ],
+      "pdf": "pdf/trocr.pdf",
+      "draft": 1,
+      "text": "A TrOCR model that parses ancient Spanish court documents. Add the dataset, the approach and the accuracy you reached."
+    },
+    {
+      "id": "marathon-signal",
+      "title": "Marathon registrations and shoe sales (example)",
+      "tags": [
+        "finance",
+        "cs",
+        "personal"
+      ],
+      "draft": 1,
+      "text": "An example of a project in all three branches: scrape marathon registration data, predict shoe sales and stock moves, then build a trading model. Replace or delete it."
+    },
+    {
+      "id": "strava",
+      "title": "Strava year in data",
+      "tags": [
+        "personal",
+        "cs"
+      ],
+      "draft": 1,
+      "text": "Add charts of your runs, pace or training load."
+    },
+    {
+      "id": "music",
+      "title": "Music project",
+      "tags": [
+        "personal"
+      ],
+      "draft": 1,
+      "text": "Add a track, a playlist or a write-up."
+    },
+    {
+      "id": "books",
+      "title": "Book reviews",
+      "tags": [
+        "personal"
+      ],
+      "draft": 1,
+      "text": "Add a title, a rating and a few paragraphs."
+    },
+    {
+      "id": "philosophy",
+      "title": "Philosophy writing",
+      "tags": [
+        "personal"
+      ],
+      "pdf": "pdf/essay.pdf",
+      "draft": 1,
+      "text": "Add an essay or a short argument."
+    }
+  ]
+}

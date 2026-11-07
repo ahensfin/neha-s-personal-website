@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Neha</title>
+<meta name="description" content="Portfolio of research, finance and code projects.">
+<meta property="og:title" content="Neha">
+<meta property="og:description" content="Portfolio of research, finance and code projects.">
+<meta property="og:image" content="pics/preview.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+:root{--paper:#f6ece0;--sheet:#fffaf4;--ink:#1d1416;--mut:#7d6b68;--rule:#d9c9bd;--rose:#c98d9b;--maroon:#5b1e26;--f:"Lato","Helvetica Neue",Arial,sans-serif;--m:"Courier Prime","Courier New",monospace;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:#111;color:var(--ink);font:400 15px/1.55 var(--f)}
+.page{max-width:1280px;margin:0 auto;padding:22px clamp(16px,3vw,40px) 40px}
+.top{display:flex;gap:28px;flex-wrap:wrap;font-size:12.5px;color:#b8aaa6;border-bottom:1px solid var(--rose);padding-bottom:8px}
+.intro{max-width:62ch;padding:30px 0 0}
+h1{font:900 clamp(64px,14vw,168px)/.9 var(--f);letter-spacing:-.045em;margin:0 0 16px;color:var(--rose)}
+.sub{margin:0 0 10px}
+.intro p{margin:0 0 18px;color:#d6cac4;font:400 13.5px/1.6 var(--m)}
+.legend{display:flex;flex-wrap:wrap;gap:6px}
+.legend button{display:flex;align-items:center;gap:9px;background:rgba(246,236,224,.13);border:0;border-radius:14px 14px 0 0;padding:10px 20px 9px;font:inherit;font-size:14px;font-weight:700;color:#efe3da;cursor:pointer}
+.legend i{display:block;width:16px;height:0;border-top:3px solid}
+.legend button:hover,.legend button.on{background:var(--paper);color:var(--maroon)}
+#stage{position:relative;height:max(84vh,700px);background:var(--paper);border-radius:0 28px 0 0}
+#lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+line{stroke-width:1.3;opacity:.8;transition:opacity .25s}
+line.dim{opacity:.07}
+.ln{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.3s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.tile{position:absolute;display:block;padding:7px 7px 6px;background:var(--sheet);border:0;box-shadow:0 2px 9px rgba(60,30,30,.26);font:inherit;text-align:left;cursor:pointer;color:var(--ink);transition:opacity .25s,box-shadow .2s,z-index 0s}
+.tile::before{content:"";position:absolute;top:-8px;left:50%;width:46px;height:15px;margin-left:-23px;transform:rotate(-3deg);background:rgba(201,141,155,.8)}
+.tile:hover,.tile:focus-visible{box-shadow:0 4px 16px rgba(0,0,0,.32);z-index:5}
+.tile.dim{opacity:.22}
+.th{background:#efe2d6;height:var(--th);overflow:hidden;color:var(--maroon)}
+.th svg,.th img{display:block;width:100%;height:100%;object-fit:cover}
+.tt{display:block;font:400 11px/1.25 var(--m);margin-top:6px;height:2.5em;overflow:hidden}
+.hub{position:absolute;transform:translate(-50%,-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:4px;background:none;border:0;font:inherit;cursor:pointer;transition:opacity .25s}
+.hub b{width:16px;height:16px;border-radius:50%;box-shadow:0 0 0 4px var(--paper)}
+.hub span{background:var(--paper);padding:1px 8px;font-weight:900;font-size:15px;color:var(--maroon)}
+.hub.dim{opacity:.3}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+#panel{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--paper);border-left:1px solid var(--rule);padding:calc(22px + env(safe-area-inset-top,0px)) 26px calc(26px + env(safe-area-inset-bottom,0px));overflow-y:auto;z-index:20;transform:translateX(102%);visibility:hidden;transition:transform .3s ease,visibility 0s .3s}
+#panel.open{transform:none;visibility:visible;transition:transform .3s ease}
+#panel h2{font:900 30px/1.1 var(--f);letter-spacing:-.02em;margin:18px 0 6px;color:var(--maroon)}
+.x{float:right;background:none;border:1px solid var(--ink);border-radius:999px;padding:4px 16px;font:inherit;font-size:13px;cursor:pointer}
+.chips{display:flex;gap:6px 14px;flex-wrap:wrap;margin:10px 0}
+.chips button{display:flex;align-items:center;gap:6px;background:none;border:0;padding:0;font:inherit;font-size:13.5px;cursor:pointer;color:var(--ink)}
+.chips i{width:10px;height:10px;border-radius:50%}
+.fig{height:150px;background:#efe2d6;margin:16px 0;color:var(--maroon)}
+.fig svg,.fig img{display:block;width:100%;height:100%;object-fit:cover}
+.pdf{display:inline-block;border:1px solid var(--ink);border-radius:999px;padding:8px 20px;color:var(--ink);text-decoration:none;font-size:14px}
+.pdf:hover{background:var(--ink);color:#fff}
+#panel p,.rows{font-family:var(--m);font-size:13.5px}
+.ph{font-size:12.5px;color:var(--mut);border:1px dashed var(--mut);padding:0 7px;margin-left:6px;vertical-align:middle}
+.rows button{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--ink);padding:11px 0;font:inherit;font-size:14px;cursor:pointer;color:var(--ink)}
+.rows button:hover{padding-left:6px}
+.rows small{display:block;color:var(--mut)}
+@media(max-width:700px){.legend button{padding:9px 13px 8px}}
+@media(prefers-reduced-motion:reduce){.ln{animation:none;stroke-dashoffset:0}#panel{transition:none}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top"><span>Portfolio</span><span>Finance and Economics with a CS minor, Case Western Reserve University</span><span>Class of 2027</span></div>
+  <div class="intro">
+    <h1 id="nm"></h1>
+    <p class="sub">Research, markets and code</p>
+    <p id="ab"></p>
+    <div class="legend" id="lg"></div>
+  </div>
+  <div id="stage">
+    <svg id="lines" aria-hidden="true"></svg>
+    <div id="tiles"></div>
+    <div id="hubs"></div>
+  </div>
+</div>
+<aside id="panel" aria-live="polite"></aside>
+
+<script>
+fetch("projects.json").then(r=>r.json()).then(cfg=>{const NAME=cfg.name,ABOUT=cfg.about,BRANCHES=cfg.branches,DECKS=cfg.projects;
+
+
+const $=s=>document.querySelector(s), B=BRANCHES, byId=Object.fromEntries(DECKS.map(d=>[d.id,d]));
+$("#nm").textContent=NAME;$("#ab").textContent=ABOUT;
+$("#lg").innerHTML=Object.keys(B).map(k=>`<button data-b="${k}"><i style="border-color:${B[k].c}"></i><span>${B[k].t}</span></button>`).join("");
+const stage=$("#stage"),svg=$("#lines"),tl=$("#tiles"),hb=$("#hubs"),panel=$("#panel");
+let pos={},hp={},TW=116,TH=120,sel=null,hov=null,first=true;
+
+function spark(seed,col){let h=0;for(const c of seed)h=(h*31+c.charCodeAt(0))>>>0;let y=30,p=[];
+  for(let i=0;i<24;i++){h=(h*1664525+1013904223)>>>0;y+=((h>>>8)%100-46)/9;y=Math.max(8,Math.min(52,y));p.push(i*10+","+(60-y).toFixed(1))}
+  return `<svg viewBox="0 0 230 60" preserveAspectRatio="none" role="img" aria-label="Sample chart"><polyline points="${p.join(" ")}" fill="none" stroke="${col}" stroke-width="1.6"/></svg>`}
+const fig=d=>d.img?`<img src="${d.img}" alt="">`:spark(d.id,B[d.tags[0]].c);
+
+function layout(){
+  const r=stage.getBoundingClientRect(),W=r.width,H=r.height;TW=W<600?86:116;TH=TW*.62;const tH=TH+46;
+  const q={econ:[.17,.52],finance:[.5,.2],cs:[.83,.52],personal:[.5,.84]};
+  hp={};for(const k in q)hp[k]=[q[k][0]*W,q[k][1]*H];
+  const single={};pos={};
+  DECKS.forEach(d=>{if(d.tags.length>1){const s=d.tags.reduce((a,t)=>[a[0]+hp[t][0],a[1]+hp[t][1]],[0,0]);pos[d.id]=[s[0]/d.tags.length,s[1]/d.tags.length]}else(single[d.tags[0]]=single[d.tags[0]]||[]).push(d.id)});
+  for(const k in single){const n=single[k].length,h=hp[k],base=Math.atan2(h[1]-H/2,h[0]-W/2);
+    single[k].forEach((id,i)=>{const a=base+(i-(n-1)/2)*1.0,R=TW*1.25;pos[id]=[h[0]+Math.cos(a)*R,h[1]+Math.sin(a)*R]})}
+  const ids=DECKS.map(d=>d.id);
+  for(let it=0;it<80;it++){
+    ids.forEach(a=>ids.forEach(b=>{if(a>=b)return;const p=pos[a],o=pos[b],dx=o[0]-p[0],dy=o[1]-p[1],ox=TW+14-Math.abs(dx),oy=tH+10-Math.abs(dy);
+      if(ox>0&&oy>0){if(ox<oy){const s=Math.sign(dx)||1;p[0]-=s*ox/2;o[0]+=s*ox/2}else{const s=Math.sign(dy)||1;p[1]-=s*oy/2;o[1]+=s*oy/2}}}));
+    ids.forEach(i=>{pos[i][0]=Math.min(W-TW/2-6,Math.max(TW/2+6,pos[i][0]));pos[i][1]=Math.min(H-tH/2-6,Math.max(tH/2+6,pos[i][1]))})}
+  svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  let n=0;svg.innerHTML=DECKS.map(d=>d.tags.map(t=>`<line class="${first?"ln":""}" style="${first?`animation-delay:${n++*70}ms`:""}" pathLength="1" x1="${pos[d.id][0]}" y1="${pos[d.id][1]}" x2="${hp[t][0]}" y2="${hp[t][1]}" stroke="${B[t].c}" data-p="${d.id}" data-b="${t}"/>`).join("")).join("");
+  tl.innerHTML=DECKS.map((d,i)=>`<button class="tile" data-p="${d.id}" style="--th:${TH}px;width:${TW+10}px;left:${pos[d.id][0]}px;top:${pos[d.id][1]}px;transform:translate(-50%,-50%) rotate(${((i*37)%7-3)*.7}deg)"><span class="th" style="display:block">${fig(d)}</span><span class="tt">${d.title}</span></button>`).join("");
+  hb.innerHTML=Object.keys(B).map(k=>`<button class="hub" data-b="${k}" style="left:${hp[k][0]}px;top:${hp[k][1]}px"><b style="background:${B[k].c}"></b><span>${B[k].t}</span></button>`).join("");
+  first=false;update()}
+
+function update(){const f=hov||sel,tg=f&&(f.t==="p"?byId[f.id].tags:null);
+  svg.querySelectorAll("line").forEach(l=>l.classList.toggle("dim",!!f&&(f.t==="p"?l.dataset.p!==f.id:l.dataset.b!==f.id)));
+  tl.querySelectorAll(".tile").forEach(t=>t.classList.toggle("dim",!!f&&(f.t==="p"?t.dataset.p!==f.id:!byId[t.dataset.p].tags.includes(f.id))));
+  hb.querySelectorAll(".hub").forEach(h=>h.classList.toggle("dim",!!f&&(f.t==="p"?!tg.includes(h.dataset.b):h.dataset.b!==f.id)));
+  document.querySelectorAll("#lg button").forEach(b=>b.classList.toggle("on",!!f&&f.t==="b"&&f.id===b.dataset.b))}
+
+function chips(d){return `<div class="chips">${d.tags.map(t=>`<button data-b="${t}"><i style="background:${B[t].c}"></i>${B[t].t}</button>`).join("")}</div>`}
+function show(){
+  if(!sel){panel.classList.remove("open");return}
+  let h='<button class="x" data-close>Close</button>';
+  if(sel.t==="p"){const d=byId[sel.id];h+=`<h2>${d.title}${d.draft?'<span class="ph">placeholder</span>':""}</h2>${chips(d)}<div class="fig">${fig(d)}</div><p>${d.text}</p>${d.pdf?`<a class="pdf" href="${d.pdf}" download>Download PDF</a>`:""}`}
+  else{const rows=DECKS.filter(d=>d.tags.includes(sel.id));h+=`<h2>${B[sel.id].t}</h2><p>${rows.length} project${rows.length===1?"":"s"} on this branch.</p><div class="rows">${rows.map(d=>`<button data-p="${d.id}">${d.title}<small>${d.tags.map(t=>B[t].t).join(", ")}</small></button>`).join("")}</div>`}
+  panel.innerHTML=h;panel.classList.add("open");panel.scrollTop=0}
+function route(){const h=location.hash.slice(1);sel=B[h]?{t:"b",id:h}:byId[h]?{t:"p",id:h}:null;show();update()}
+
+document.addEventListener("click",e=>{
+  const c=e.target.closest("[data-close]");if(c){location.hash="home";return}
+  const p=e.target.closest("[data-p]");if(p){location.hash=p.dataset.p;return}
+  const b=e.target.closest("[data-b]");if(b)location.hash=b.dataset.b});
+tl.addEventListener("pointerover",e=>{const t=e.target.closest(".tile");hov=t?{t:"p",id:t.dataset.p}:null;update()});
+tl.addEventListener("pointerleave",()=>{hov=null;update()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&sel)location.hash="home"});
+addEventListener("hashchange",route);
+let rz;addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(layout,150)});
+layout();route();
+}).catch(()=>{document.body.insertAdjacentHTML("beforeend","<p style=\"color:#fff;padding:20px\">Could not load projects.json. If you opened index.html directly, run a local server (see README).</p>")});
+</script>
+</body>
+</html>
