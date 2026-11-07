@@ -85,7 +85,7 @@ fetch("projects.json").then(r=>r.json()).then(cfg=>{const NAME=cfg.name,ABOUT=cf
 
 
 const $=s=>document.querySelector(s), B=BRANCHES, byId=Object.fromEntries(DECKS.map(d=>[d.id,d]));
-$("#nm").textContent=NAME;$("#ab").textContent=ABOUT;
+$("#nm").textContent=NAME;$("#ab").innerHTML=ABOUT;
 $("#lg").innerHTML=Object.keys(B).map(k=>`<button data-b="${k}"><i style="border-color:${B[k].c}"></i><span>${B[k].t}</span></button>`).join("");
 const stage=$("#stage"),svg=$("#lines"),tl=$("#tiles"),hb=$("#hubs"),panel=$("#panel");
 let pos={},hp={},TW=116,TH=120,sel=null,hov=null,first=true;
